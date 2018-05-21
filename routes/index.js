@@ -1,9 +1,10 @@
 var express = require('express');
 var path = require('path');
+var cors = require('cors');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/:timeformat', function(req, res, next) {
+router.get('/:timeformat', cors(), function(req, res, next) {
   var time = req.params.timeformat;
   var d = new Date(time);
   if(d != "Invalid Date"){
